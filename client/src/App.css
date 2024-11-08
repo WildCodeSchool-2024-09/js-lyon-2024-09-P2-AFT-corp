@@ -3,18 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 #logo {
-  height: 200px;
   width: 200px;
+  height: 200px;
 }
 
 nav {
   background-color: black;
-}
-
-.navbar {
-  background-color: black;
-  color: white;
 }
 
 li {
@@ -31,6 +27,8 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: black;
+  color: white;
 }
 
 ul {
