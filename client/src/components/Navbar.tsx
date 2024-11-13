@@ -1,5 +1,5 @@
 import CORP from "../CORP.png";
-import Utilisateur from "../utilisateur.png";
+import utilisateur from "../utilisateur.png";
 
 export default function NavBar() {
   return (
@@ -11,7 +11,7 @@ export default function NavBar() {
         <li>Série</li>
       </ul>
       <input type="text" />
-      <img id="avatar" src={Utilisateur} alt="" />
+      <img id="avatar" src={utilisateur} alt="" />
       <nav />
     </div>
   );
