@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: rgb(26, 24, 24);
 }
 
 #logo {
@@ -48,4 +49,25 @@ ul {
   flex-direction: column;
   align-items: center;
   font-size: x-small;
+}
+.actif:focus {
+  color: white;
+}
+.image {
+  height: 300px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.1s;
+}
+
+.movie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px;
+}
+
+.image:hover {
+  transform: scale(1.3);
 }
