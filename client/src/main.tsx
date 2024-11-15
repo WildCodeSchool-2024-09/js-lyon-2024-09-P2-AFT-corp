@@ -26,25 +26,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <MovieList
-            MoviesList={{
-              id: 0,
-              adult: undefined,
-              backdrop_path: undefined,
-              genre_ids: undefined,
-              original_language: undefined,
-              original_title: undefined,
-              overview: undefined,
-              popularity: undefined,
-              poster_path: "",
-              release_date: undefined,
-              title: undefined,
-              video: undefined,
-              vote_average: undefined,
-            }}
-          />
-        ),
+        element: <MovieList />,
       },
       {
         path: "/films",

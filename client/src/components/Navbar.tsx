@@ -1,18 +1,23 @@
 import { Link } from "react-router-dom";
 import CORP from "../CORP.png";
-import utilisateur from "../utilisateur.png";
-
+import UserLogo from "../UserLogo.png";
 export default function NavBar() {
   return (
     <div className="navbar">
       <img id="logo" src={CORP} alt="" />
       <ul>
-        <Link to="/">Acceuil</Link>
-        <Link to="/films">Films</Link>
-        <Link to="/series">Série</Link>
+        <li>
+          <Link to="/">Acceuil</Link>
+        </li>
+        <li>
+          <Link to="/films">Films</Link>
+        </li>
+        <li>
+          <Link to="/series">Série</Link>
+        </li>
       </ul>
       <input type="text" className="input" />
-      <img id="avatar" src={utilisateur} alt="" />
+      <img id="avatar" src={UserLogo} alt="" />
       <nav />
     </div>
   );
