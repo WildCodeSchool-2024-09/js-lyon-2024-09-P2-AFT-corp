@@ -7,7 +7,7 @@ export default function NavBar() {
       <img id="logo" src={CORP} alt="" />
       <ul>
         <li>
-          <Link to="/">Acceuil</Link>
+          <Link to="/">Accueil</Link>
         </li>
         <li>
           <Link to="/films">Films</Link>
