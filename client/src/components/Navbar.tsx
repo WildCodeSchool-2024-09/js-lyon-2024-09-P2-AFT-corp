@@ -7,17 +7,17 @@ export default function NavBar() {
       <img id="logo" src={CORP} alt="" />
       <ul>
         <li>
-          <Link to="/">Accueil</Link>
+          <Link to="/accueil">Accueil</Link>
         </li>
         <li>
           <Link to="/films">Films</Link>
         </li>
         <li>
-          <Link to="/series">Série</Link>
+          <Link to="/series">Séries</Link>
         </li>
       </ul>
       <input type="text" className="input" />
-      <img id="avatar" src={UserLogo} alt="" />
+      <img id="avatar" src={UserLogo} alt="logo de l'avatar" />
       <nav />
     </div>
   );
