@@ -55,11 +55,11 @@ export default function Home() {
     }, 5000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, []); 
 
   return (
     <main className="mainHome">
-      <div className={`serieHome ${isBlurred ? "blur" : ""}`}>
+      <div className={`serieHome ${isBlurred === true ? "blur" : ""}`}>
         {serie ? (
           <div className="afficheSerie" key={serie.id}>
             <img
