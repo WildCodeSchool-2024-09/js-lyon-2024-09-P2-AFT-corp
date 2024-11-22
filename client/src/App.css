@@ -3,15 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   background-color: rgb(26, 24, 24);
+  font-family: "Roboto", sans-serif;
 }
 
 #logo {
-  width: 200px;
-  height: 200px;
-}
-
-nav {
-  background-color: black;
+  width: 5rem;
+  margin: 1rem;
 }
 
 li {
@@ -30,12 +27,15 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
   color: white;
 }
 
 ul {
   display: contents;
+}
+a {
+  color: white;
+  text-decoration: none;
 }
 
 .footer {
@@ -67,6 +67,7 @@ ul {
   flex-wrap: wrap;
   gap: 30px;
   margin: 20px;
+  justify-content: center;
 }
 
 .image:hover {
@@ -75,4 +76,100 @@ ul {
 
 .input {
   background-color: white;
+}
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+@media screen and (max-width: 844px) {
+  #logo {
+    width: 5rem;
+  }
+
+  .image {
+    height: 300px;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    flex-direction: column;
+  }
+  #avatar {
+    position: absolute;
+    right: 3px;
+  }
 }
