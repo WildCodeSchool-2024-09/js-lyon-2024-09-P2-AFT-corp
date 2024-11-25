@@ -11,6 +11,8 @@ import Home from "./pages/Home";
 import MovieList from "./components/MovieList";
 import Films from "./pages/Films";
 import Series from "./pages/Series";
+import MovieListDetail from "./pages/MovieListDetail";
+import SerieDetail from "./pages/SerieDetail";
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
         path: "/accueil",
         element: <Home />,
       },
+      { 
+      path:"/films/detail/:id",
+      element: <MovieListDetail/>
+    },
+    {
+      path:"serie/detail/:id",
+      element: <SerieDetail/>,
+    },
       {
         path: "/films",
         element: <MovieList />,

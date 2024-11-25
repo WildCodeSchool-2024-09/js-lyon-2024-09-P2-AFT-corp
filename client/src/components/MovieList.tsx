@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 interface MovieListProps {
   id: number;
   adult?: boolean;
@@ -26,7 +27,7 @@ export default function MovieList() {
       },
     };
     fetch(
-      "https://api.themoviedb.org/3/trending/tv/day?language=en-US",
+      "https://api.themoviedb.org/3/discover/movie",
       options,
     )
       .then((res) => res.json())
@@ -38,11 +39,13 @@ export default function MovieList() {
       <main className="movie">
         {movies.map((movie) => (
           <div key={movie.id}>
+            <NavLink to={`/films/detail/${movie.id}`}>
             <img
               className="image"
               src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`}
               alt="poster_path"
             />
+            </NavLink>
           </div>
         ))}
       </main>

@@ -21,6 +21,10 @@ li {
   width: 40px;
 }
 
+nav {
+    margin-bottom: 1rem;
+}
+
 .navbar {
   background-color: black;
   color: white;
@@ -28,6 +32,7 @@ li {
   justify-content: space-between;
   align-items: center;
   color: white;
+  margin-bottom: 5rem;
 }
 
 ul {
