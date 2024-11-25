@@ -8,6 +8,7 @@ interface SerieListProps {
   genre_ids?: string;
   original_language?: string;
   original_title?: string;
+  tittle: string;
   overview?: string;
   popularity?: number;
   poster_path: string;
@@ -35,7 +36,7 @@ export default function Home() {
 
     setTimeout(() => {
       fetch(
-        "https://api.themoviedb.org/3/trending/tv/day?language=en-US",
+        "https://api.themoviedb.org/3/discover/movie",
         options,
       )
         .then((res) => res.json())
@@ -65,10 +66,10 @@ export default function Home() {
             <img
               id="imagepagehome"
               src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${serie.poster_path}`}
-              alt={serie.name}
+              alt={serie.original_title}
             />
             <div className="overview">
-              <h3>{serie.name}</h3>
+              <h3>{serie.original_title}</h3>
               <p>{serie.overview || "Pas disponible"}</p>
             </div>
           </div>
