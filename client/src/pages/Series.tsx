@@ -27,7 +27,7 @@ export default function SeriesList() {
     };
     fetch(
       "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
-      options,
+      options
     )
       .then((res) => res.json())
       .then((res) => setSeries(res.results))
@@ -35,17 +35,19 @@ export default function SeriesList() {
   }, []);
   return (
     <>
-      <main className="movie">
-        {series.map((serie) => (
-          <div key={serie.id}>
-            <img
-              className="image"
-              src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${serie.poster_path}`}
-              alt="poster_path"
-            />
-          </div>
-        ))}
-      </main>
+      <div className="Background">
+        <main className="movie">
+          {series.map((serie) => (
+            <div key={serie.id}>
+              <img
+                className="image"
+                src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${serie.poster_path}`}
+                alt="poster_path"
+              />
+            </div>
+          ))}
+        </main>
+      </div>
     </>
   );
 }
