@@ -5,17 +5,17 @@
   background-color: rgb(26, 24, 24);
   font-family: "Roboto", sans-serif;
 }
-
 #logo {
   width: 5rem;
   margin: 1rem;
 }
-
+nav {
+  background-color: black;
+}
 li {
   display: flex;
   list-style-type: none;
 }
-
 #avatar {
   height: 40px;
   width: 40px;
@@ -23,7 +23,7 @@ li {
 }
 
 nav {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .navbar {
@@ -35,7 +35,6 @@ nav {
   color: white;
   margin-bottom: 5rem;
 }
-
 ul {
   display: contents;
 }
@@ -43,7 +42,6 @@ a {
   color: white;
   text-decoration: none;
 }
-
 .footer {
   display: flex;
   padding: 20px;
@@ -56,7 +54,6 @@ a {
   display: grid;
   justify-content: center;
 }
-
 .actif:focus {
   color: white;
 }
@@ -67,7 +64,6 @@ a {
   justify-content: center;
   transition: transform 0.1s;
 }
-
 .movie {
   display: flex;
   flex-wrap: wrap;
@@ -75,11 +71,9 @@ a {
   margin: 20px;
   justify-content: center;
 }
-
 .image:hover {
   transform: scale(1.3);
 }
-
 .input {
   background-color: white;
 }

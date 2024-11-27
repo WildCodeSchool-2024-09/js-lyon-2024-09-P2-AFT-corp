@@ -1,7 +1,7 @@
 import UserLogo from "../UserLogo.png";
 import UserLogo1 from "../UserLogo1.png";
 import UserLogo2 from "../UserLogo2.png";
-import "../components/Connexion.css"
+import "../Connexion.css";
 import { Link } from "react-router-dom";
 import Video from "../Video.mp4";
 export default function Connexion() {

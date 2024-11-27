@@ -13,6 +13,10 @@ import Series from "./pages/Series";
 import MovieListDetail from "./pages/MovieListDetail";
 import SerieDetail from "./pages/SerieDetail";
 import Connexion from "./pages/Connexion";
+import "./Connexion.css";
+import SearchResults from "./components/SearchResults";
+
+
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
@@ -27,19 +31,23 @@ const router = createBrowserRouter([
   {
     element: <App />, // Renders the App component for the home page
     children: [
- 
+      {
+        path: "/home",
+        element: <Home />, //Home
+      },
+
       {
         path: "/accueil",
         element: <Home />,
       },
-      { 
-      path:"/films/detail/:id",
-      element: <MovieListDetail/>
-    },
-    {
-      path:"serie/detail/:id",
-      element: <SerieDetail/>,
-    },
+      {
+        path: "/films/detail/:id",
+        element: <MovieListDetail />,
+      },
+      {
+        path: "serie/detail/:id",
+        element: <SerieDetail />,
+      },
       {
         path: "/films",
         element: <MovieList />,
@@ -48,11 +56,17 @@ const router = createBrowserRouter([
         path: "/series",
         element: <Series />,
       },
+      {
+        path: "/search/:query", // Nouvelle route pour afficher les résultats de recherche
+        element: <SearchResults />,
+      },
     ], // The root path
   },
   {
     path: "/",
-    element: <Connexion/>,
+
+    element: <Connexion />,
+
   },
   // Try adding a new route! For example, "/about" with an About component
 ]);
@@ -69,7 +83,7 @@ if (rootElement == null) {
 createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 );
 
 /**

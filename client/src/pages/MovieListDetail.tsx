@@ -44,7 +44,7 @@ export default function MovieListDetail() {
 
                 <div className="affichedetail" key={movies.id}>
                     <img
-                    className="posterdetail"
+                    className="detail"
                     src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${movies.poster_path}`}
                     alt="poster_path"
                     />
