@@ -34,23 +34,31 @@ export default function MovieListDetail() {
       .then((data) => setMovies(data))
       .catch((err) => console.error(err));
   }, [movieId.id]);
-  
+
   return (
-    <main className="maindetail">
-      <div className="image data"/>
-        <div>
-          <article className="affichedetail" key={movies.id}>
-            <img
-              className="imagedetail"
-              src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${movies.poster_path}`}
-              alt="poster_path"
-            />
-            <div className="movie-overview"/>
-            <h3>{movies.title} </h3>
-            <p>{movies.overview || "pas de synopsis"}</p>
-          </article>
+    <section className="maindetail">
+
+        <div className="posterdata">
+
+            <div>
+
+                <div className="affichedetail" key={movies.id}>
+                    <img
+                    className="detail"
+                    src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${movies.poster_path}`}
+                    alt="poster_path"
+                    />
+                    <div className="movie-overview">
+                        <h3>{movies.title} </h3>
+                        <p>{movies.overview || "pas de synopsis"}</p>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-      </main>
+
+    </section>
   );
 }
 

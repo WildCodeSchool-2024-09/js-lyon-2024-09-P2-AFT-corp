@@ -26,40 +26,24 @@ export default function SerieList() {
         Authorization: `Bearer ${apiKey}`,
       },
     };
-    fetch(
-      "https://api.themoviedb.org/3/discover/tv",
-      options,
-    )
+    fetch("https://api.themoviedb.org/3/discover/tv", options)
       .then((res) => res.json())
       .then((res) => setMovies(res.results))
       .catch((err) => console.error(err));
   }, []);
   return (
-    <>
-      <main className="movie">
-        {movies.map((movie) => (
-          <div key={movie.id}>
-            <NavLink to={`/serie/detail/${movie.id}`}>
-              <img
-                className="image"
-                src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`}
-                alt="poster_path"
-              />
-            </NavLink>
-          </div>
-        ))}
-      </main>
-    </>
+        <main className="movie">
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <NavLink to={`/serie/detail/${movie.id}`}>
+                <img
+                  className="image"
+                  src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`}
+                  alt="poster_path"
+                />
+              </NavLink>
+            </div>
+          ))}
+        </main>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
