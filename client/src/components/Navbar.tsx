@@ -17,7 +17,9 @@ export default function NavBar() {
         </li>
       </ul>
       <input type="text" className="input" />
+      <Link to="/"> 
       <img id="avatar" src={UserLogo} alt="logo de l'avatar" />
+      </Link>
       <nav />
     </div>
   );

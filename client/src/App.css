@@ -19,6 +19,7 @@ li {
 #avatar {
   height: 40px;
   width: 40px;
+  border-radius: 3rem;
 }
 
 nav {
@@ -173,8 +174,5 @@ a {
     color: white;
     flex-direction: column;
   }
-  #avatar {
-    position: absolute;
-    right: 3px;
-  }
+
 }

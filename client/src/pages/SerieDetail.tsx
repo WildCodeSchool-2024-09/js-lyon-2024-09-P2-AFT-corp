@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "../components/SerieDetail.css"
 interface SeriesListProps {
   id: number;
   adult?: boolean;
@@ -14,6 +15,7 @@ interface SeriesListProps {
   title?: string;
   video: boolean;
   vote_average?: number;
+  name: string;
 }
 export default function SerieDetail() {
   const apiKey = import.meta.env.VITE_CLIENT_API_KEY;
@@ -34,19 +36,31 @@ export default function SerieDetail() {
       .catch((err) => console.error(err));
   }, [serieId.id]);
   return (
-    <>
-      <div className="image data">
-        <div key={series.id}>
-          <article>
+<section className="maindetail"> 
+
+    <div className="posterdata">
+
+        <div> 
+
+          <div className="affichedetail" key={series.id}>
+          
             <img
-              className="image"
+              className="posterdetail"
               src={`https://media.themoviedb.org/t/p/w600_and_h900_bestv2/${series.poster_path}`}
               alt="poster_path"
             />
-            <p>{series.overview || "pas de synopsis"}</p>
-          </article>
+                 <div className="serie-overview" > 
+                    <h3>{series.name} </h3>
+                    <p>{series.overview || "pas de synopsis"}</p>
+                </div>
+          
+          </div>
+
         </div>
-      </div>
-    </>
-  );
+
+    </div>
+
+</section>
+
+);
 }
