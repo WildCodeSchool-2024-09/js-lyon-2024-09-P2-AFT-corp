@@ -14,7 +14,8 @@ const SearchResults = () => {
   const [results, setResults] = useState<Movie[]>([]); // Typage des résultats
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const apiKey = "33baccb4b233351d7a7238564c5c282f";
+  const apiKey = import.meta.env.VITE_APIK2;
+
   useEffect(() => {
     if (query) {
       const fetchResults = async () => {

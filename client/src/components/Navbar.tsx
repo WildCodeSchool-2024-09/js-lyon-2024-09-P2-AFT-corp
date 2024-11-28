@@ -43,12 +43,11 @@ export default function NavBar() {
           className="input"
           value={searchQuery}
           onChange={handleInputChange}
-          placeholder="Rechercher un film ou une série"
+          placeholder="Search"
         />
-      
       </form>
-      <Link to="/"> 
-      <img id="avatar" src={UserLogo} alt="Utilisateur" /> 
+      <Link to="/">
+        <img id="avatar" src={UserLogo} alt="Utilisateur" />
       </Link>
     </div>
   );

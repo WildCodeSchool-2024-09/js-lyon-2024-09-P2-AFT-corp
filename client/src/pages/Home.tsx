@@ -1,5 +1,5 @@
 import "../pages/Home.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface SerieListProps {
   id: number;
@@ -23,7 +23,7 @@ export default function Home() {
   const [serie, setSerie] = useState<SerieListProps | null>(null);
   const [isBlurred, setIsBlurred] = useState(false);
 
-  const fetchRandomSerie = () => {
+  const fetchRandomSerie = useCallback(() => {
     const options = {
       method: "GET",
       headers: {
@@ -35,10 +35,7 @@ export default function Home() {
     setIsBlurred(true);
 
     setTimeout(() => {
-      fetch(
-        "https://api.themoviedb.org/3/discover/movie",
-        options,
-      )
+      fetch("https://api.themoviedb.org/3/discover/movie", options)
         .then((res) => res.json())
         .then((res) => {
           const randomIndex = Math.floor(Math.random() * res.results.length);
@@ -47,16 +44,15 @@ export default function Home() {
         })
         .catch((err) => console.error(err));
     }, 500);
-  };
+  }, []);
 
   useEffect(() => {
     fetchRandomSerie();
     const intervalId = setInterval(() => {
       fetchRandomSerie();
     }, 5000);
-
     return () => clearInterval(intervalId);
-  }, []); 
+  }, [fetchRandomSerie]);
 
   return (
     <main className="mainHome">

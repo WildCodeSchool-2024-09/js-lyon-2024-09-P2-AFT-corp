@@ -70,12 +70,15 @@ a {
   gap: 30px;
   margin: 20px;
   justify-content: center;
+  min-height: 100vh;
 }
 .image:hover {
   transform: scale(1.3);
 }
 .input {
   background-color: white;
+  border-radius: 1rem;
+  font-size: large;
 }
 .roboto-thin {
   font-family: "Roboto", sans-serif;
@@ -168,5 +171,4 @@ a {
     color: white;
     flex-direction: column;
   }
-
 }
