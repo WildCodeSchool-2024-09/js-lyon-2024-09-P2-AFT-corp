@@ -7,10 +7,13 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import Connexion from "./pages/Connexion";
 import Home from "./pages/Home";
-import MovieList from "./components/MovieList";
-import Films from "./pages/Films";
-import Series from "./pages/Series";
+import "./Connexion.css";
+import SearchResults from "./components/SearchResults";
+import StreamingDetail from "./pages/StreamingDetail";
+import SteamingList from "./pages/StreamingList";
+
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
@@ -26,22 +29,40 @@ const router = createBrowserRouter([
     element: <App />, // Renders the App component for the home page
     children: [
       {
-        path: "/",
-        element: <Films />,
+        path: "/home",
+        element: <Home />, //Home
       },
+
       {
         path: "/accueil",
         element: <Home />,
       },
       {
+        path: "/films/detail/:id",
+        element: <StreamingDetail type="movie" />,
+      },
+      {
+        path: "serie/detail/:id",
+        element: <StreamingDetail type="tv" />,
+      },
+      {
         path: "/films",
-        element: <MovieList />,
+        element: <SteamingList type="movie" />,
       },
       {
         path: "/series",
-        element: <Series />,
+        element: <SteamingList type="tv" />,
+      },
+      {
+        path: "/search/:query", // Nouvelle route pour afficher les résultats de recherche
+        element: <SearchResults />,
       },
     ], // The root path
+  },
+  {
+    path: "/",
+
+    element: <Connexion />,
   },
   // Try adding a new route! For example, "/about" with an About component
 ]);

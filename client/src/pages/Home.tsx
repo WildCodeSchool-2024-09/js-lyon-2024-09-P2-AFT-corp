@@ -1,5 +1,5 @@
 import "../pages/Home.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface SerieListProps {
   id: number;
@@ -8,6 +8,7 @@ interface SerieListProps {
   genre_ids?: string;
   original_language?: string;
   original_title?: string;
+  tittle: string;
   overview?: string;
   popularity?: number;
   poster_path: string;
@@ -22,7 +23,7 @@ export default function Home() {
   const [serie, setSerie] = useState<SerieListProps | null>(null);
   const [isBlurred, setIsBlurred] = useState(false);
 
-  const fetchRandomSerie = () => {
+  const fetchRandomSerie = useCallback(() => {
     const options = {
       method: "GET",
       headers: {
@@ -34,10 +35,7 @@ export default function Home() {
     setIsBlurred(true);
 
     setTimeout(() => {
-      fetch(
-        "https://api.themoviedb.org/3/trending/tv/day?language=en-US",
-        options,
-      )
+      fetch("https://api.themoviedb.org/3/discover/movie", options)
         .then((res) => res.json())
         .then((res) => {
           const randomIndex = Math.floor(Math.random() * res.results.length);
@@ -46,16 +44,15 @@ export default function Home() {
         })
         .catch((err) => console.error(err));
     }, 500);
-  };
+  }, []);
 
   useEffect(() => {
     fetchRandomSerie();
     const intervalId = setInterval(() => {
       fetchRandomSerie();
     }, 5000);
-
     return () => clearInterval(intervalId);
-  }, []); 
+  }, [fetchRandomSerie]);
 
   return (
     <main className="mainHome">
@@ -65,10 +62,10 @@ export default function Home() {
             <img
               id="imagepagehome"
               src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${serie.poster_path}`}
-              alt={serie.name}
+              alt={serie.original_title}
             />
             <div className="overview">
-              <h3>{serie.name}</h3>
+              <h3>{serie.original_title}</h3>
               <p>{serie.overview || "Pas disponible"}</p>
             </div>
           </div>

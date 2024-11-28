@@ -5,20 +5,25 @@
   background-color: rgb(26, 24, 24);
   font-family: "Roboto", sans-serif;
 }
-
 #logo {
   width: 5rem;
   margin: 1rem;
 }
-
+nav {
+  background-color: black;
+}
 li {
   display: flex;
   list-style-type: none;
 }
-
 #avatar {
   height: 40px;
   width: 40px;
+  border-radius: 3rem;
+}
+
+nav {
+  margin-bottom: 1rem;
 }
 
 .navbar {
@@ -28,8 +33,8 @@ li {
   justify-content: space-between;
   align-items: center;
   color: white;
+  margin-bottom: 5rem;
 }
-
 ul {
   display: contents;
 }
@@ -37,7 +42,6 @@ a {
   color: white;
   text-decoration: none;
 }
-
 .footer {
   display: flex;
   padding: 20px;
@@ -50,7 +54,6 @@ a {
   display: grid;
   justify-content: center;
 }
-
 .actif:focus {
   color: white;
 }
@@ -61,21 +64,21 @@ a {
   justify-content: center;
   transition: transform 0.1s;
 }
-
 .movie {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   margin: 20px;
   justify-content: center;
+  min-height: 100vh;
 }
-
 .image:hover {
   transform: scale(1.3);
 }
-
 .input {
   background-color: white;
+  border-radius: 1rem;
+  font-size: large;
 }
 .roboto-thin {
   font-family: "Roboto", sans-serif;
@@ -167,9 +170,5 @@ a {
     background-color: black;
     color: white;
     flex-direction: column;
-  }
-  #avatar {
-    position: absolute;
-    right: 3px;
   }
 }
